@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="VE_License" class="property_box tf_parent" style="flex-grow: 1;">
+        <Style src="PackageMaker.uss" />
+        <ui:Label text="&apos;许可证 &apos; 内容" name="LB_LicenseContents" class="section_title" />
+        <ui:Label text="在下面粘贴许可证。如果软件包中没有提供许可证，请将许可证文件留空。"
+                  style="opacity: 0.5; margin-left: 3px; white-space: normal;" />
+        <ui:VisualElement name="VE_LicenseContents" class="package_contents_row"
+                          style="flex-direction: column; flex-grow: 1;">
+            <ui:TextField picking-mode="Ignore" value="Text Description." name="TF_LicenseContents" multiline="true"
+                          class="text_field tf_child"
+                          style="flex-wrap: wrap; white-space: normal; color: rgb(84, 84, 84); min-height: 600px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

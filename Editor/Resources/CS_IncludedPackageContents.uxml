@@ -1,0 +1,94 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="VE_NamesContents" class="property_box">
+        <Style src="PackageMaker.uss" />
+        <ui:VisualElement name="VE_PackageDisplayNameRoot" class="property_box">
+            <ui:Label text="Display Name" class="text_required" />
+            <ui:Label text="ex: Package Name" class="text_example" />
+            <ui:VisualElement name="VE_PackageDisplayName" class="package_contents_row">
+                <ui:TextField picking-mode="Ignore" name="TF_PackageDisplayName" class="text_field" />
+            </ui:VisualElement>
+            <ui:VisualElement name="VE_AuthorNameRow" style="flex-direction: row;">
+                <ui:Label text="* use Display Name as Root Folder Name" name="LB_UseDisplayNameAsRootFolderName" style="flex-grow: 1; -unity-text-align: upper-right; padding-top: 3px; -unity-font-style: italic; font-size: 10px;" />
+                <ui:Toggle name="TG_UseDisplayNameAsRootFolderName" value="false" class="toggle" style="margin-right: 4px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_RootFolderNameContents" class="property_box">
+            <ui:Label text="Root Folder Name" class="text_required" />
+            <ui:Label text="ex: Package Name or PackageName" class="text_example" />
+            <ui:TextField picking-mode="Ignore" name="TF_RootFolderNameContents" class="text_field" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="VE_IncludedPackageContents" class="property_box">
+        <Style src="PackageMaker.uss" />
+        <ui:Label text="Included Package Contents" name="LB_IncludedPackageContents" class="section_title" />
+        <ui:VisualElement name="VE_PackageManifestRow" class="package_contents_row mandatory">
+            <ui:VisualElement name="VE_PackageManifest" class="package_contents_image" style="background-image: resource(&apos;FileIcon&apos;);" />
+            <ui:Label text="package.json" name="LB_PackageManifest" class="property_contents_label" />
+            <ui:Toggle name="TG_PackageManifest" value="true" class="toggle" style="visibility: hidden;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_ReadmeRow" class="package_contents_row">
+            <ui:VisualElement name="VE_Readme" class="package_contents_image" style="background-image: resource(&apos;FileIcon&apos;);" />
+            <ui:Label text="README.md" name="LB_Readme" class="property_contents_label" />
+            <ui:Toggle name="TG_Readme" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_ChangelogRow" class="package_contents_row">
+            <ui:VisualElement name="VE_Changelog" class="package_contents_image" style="background-image: resource(&apos;FileIcon&apos;);" />
+            <ui:Label text="CHANGELOG.md" name="LB_Changelog" class="property_contents_label" />
+            <ui:Toggle name="TG_Changelog" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_LicenseRow" class="package_contents_row">
+            <ui:VisualElement name="VE_License" class="package_contents_image" style="background-image: resource(&apos;FileIcon&apos;);" />
+            <ui:Label text="LICENSE" name="LB_License" class="property_contents_label" />
+            <ui:Toggle name="TG_License" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_ThirdPartyNoticesRow" class="package_contents_row">
+            <ui:VisualElement name="VE_ThirdPartyNotices" class="package_contents_image" style="background-image: resource(&apos;FileIcon&apos;);" />
+            <ui:Label text="Third Party Notices.md" name="LB_ThirdPartyNotices" class="property_contents_label" />
+            <ui:Toggle name="TG_ThirdPartyNotices" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_EditorRow" class="package_contents_row">
+            <ui:VisualElement name="VE_Editor" class="package_contents_image" style="background-image: resource(&apos;FolderIcon&apos;);" />
+            <ui:Label text="Editor" name="LB_Editor" class="property_contents_label" />
+            <ui:Toggle name="TG_Editor" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_RuntimeRow" class="package_contents_row">
+            <ui:VisualElement name="VE_Runtime" class="package_contents_image" style="background-image: resource(&apos;FolderIcon&apos;);" />
+            <ui:Label text="Runtime" name="LB_Runtime" class="property_contents_label" />
+            <ui:Toggle name="TG_Runtime" value="false" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_TestsRow" class="package_contents_row">
+            <ui:VisualElement name="VE_Tests" class="package_contents_image" style="background-image: resource(&apos;FolderIcon&apos;);" />
+            <ui:Label text="Tests" name="LB_Tests" class="property_contents_label" />
+            <ui:Toggle name="TG_Tests" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_TestsChildren">
+            <ui:VisualElement name="VE_TestEditorRow" class="package_contents_children_row">
+                <ui:Label text="L" class="directory_connection_graphic" />
+                <ui:VisualElement name="VE_TestEditor" class="package_contents_image" style="background-image: resource(&apos;FolderIcon&apos;);" />
+                <ui:Label text="Editor" name="LB_TestEditor" class="property_contents_label" />
+                <ui:Toggle name="TG_TestEditor" class="toggle" />
+            </ui:VisualElement>
+            <ui:VisualElement name="VE_TestsRuntimeRow" class="package_contents_children_row">
+                <ui:Label text="L" class="directory_connection_graphic" />
+                <ui:VisualElement name="VE_TestRuntime" class="package_contents_image" style="background-image: resource(&apos;FolderIcon&apos;);" />
+                <ui:Label text="Runtime" name="LB_TestRuntime" class="property_contents_label" />
+                <ui:Toggle name="TG_TestRuntime" value="false" class="toggle" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_DocumentationRow" class="package_contents_row">
+            <ui:VisualElement name="VE_Documentation" class="package_contents_image" style="background-image: resource(&apos;FolderIcon&apos;);" />
+            <ui:Label text="Documentation" name="LB_Documentation" class="property_contents_label" />
+            <ui:Toggle name="TG_Documentation" value="false" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_SamplesRow" class="package_contents_row">
+            <ui:VisualElement name="VE_Samples" class="package_contents_image" style="background-image: resource(&apos;FolderIcon&apos;);" />
+            <ui:Label text="Samples" name="LB_Samples" class="property_contents_label" />
+            <ui:Toggle name="TG_Samples" value="false" class="toggle" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_Screenshots" class="package_contents_row">
+            <ui:VisualElement name="VE_Screenshots" class="package_contents_image" style="background-image: resource(&apos;FolderIcon&apos;);" />
+            <ui:Label text="Screenshots" name="LB_Screenshots" class="property_contents_label" />
+            <ui:Toggle name="TG_Screenshots" value="false" class="toggle" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

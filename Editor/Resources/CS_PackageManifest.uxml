@@ -1,0 +1,127 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Template name="CS_DependenciesEntry" src="CS_DependenciesEntry.uxml" />
+    <ui:Template name="CS_KeywordsEntry" src="CS_KeywordsEntry.uxml" />
+    <ui:VisualElement name="VE_PackageManifest" class="property_box">
+        <Style src="PackageMaker.uss" />
+        <ui:Label text="Package Manifest 属性" name="LB_IncludedPackageContents" class="section_title" />
+        <ui:VisualElement name="VE_Required" class="property_box">
+            <ui:VisualElement name="VE_PackageNameRoot">
+                <ui:Label text="Name" class="text_required" />
+                <ui:Label text="英文 ex: 框架(ET).作者(YUN).功能" class="text_example" />
+                <ui:VisualElement name="VE_PackageName" class="package_contents_row">
+                    <ui:TextField picking-mode="Ignore" name="TF_PackageNameExtension" class="text_field"
+                                  style="flex-shrink: 1;" />
+                    <ui:Label text="." class="label version_dot" />
+                    <ui:TextField picking-mode="Ignore" name="TF_PackageNameCompany" class="text_field"
+                                  style="flex-shrink: 1;" />
+                    <ui:Label text="." class="label version_dot" />
+                    <ui:TextField picking-mode="Ignore" name="TF_PackageName" class="text_field"
+                                  style="flex-shrink: 1;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Separator" class="separator"
+                              style="flex-grow: 1; max-height: 1px; min-height: 1px;" />
+            <ui:VisualElement name="VE_PackageVersionRoot">
+                <ui:Label text="版本号" class="text_required" />
+                <ui:Label text="ex: 0.1.1" class="text_example" />
+                <ui:VisualElement name="VE_PackageVersion" class="package_contents_row">
+                    <uie:IntegerField name="IF_PackageVersionMajor" class="text_field" />
+                    <ui:Label text="." class="label version_dot" />
+                    <uie:IntegerField name="IF_PackageVersionMinor" class="text_field" />
+                    <ui:Label text="." class="label version_dot" />
+                    <uie:IntegerField name="IF_PackageVersionPatch" class="text_field" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_Mandatory" class="property_box">
+            <ui:VisualElement name="VE_PackageUnityVersionRoot">
+                <ui:Label text="Unity 版本" class="text_required" />
+                <ui:Label text="ex: 2019.1" class="text_example" />
+                <ui:VisualElement name="VE_PackageUnityVersion" class="package_contents_row">
+                    <uie:IntegerField name="IF_PackageUnityVersionMajor" style="flex-grow: 1;" />
+                    <ui:Label text="." class="label version_dot" />
+                    <uie:IntegerField name="IF_PackageUnityVersionMinor" style="flex-grow: 1;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Separator" class="separator" />
+            <ui:VisualElement name="VE_PackageDescription" class="package_contents_row" style="flex-direction: column;">
+                <ui:Label text="描述" class="text_required" />
+                <ui:VisualElement style="flex-grow: 1; width: 100%;">
+                    <ui:Label text="ex: A brief description of the package." class="text_example"
+                              style="flex-wrap: wrap; white-space: normal;" />
+                </ui:VisualElement>
+                <ui:TextField picking-mode="Ignore" value="Text Description." name="TF_PackageDescription"
+                              multiline="true" class="text_field"
+                              style="max-height: 150px; min-height: 150px; height: 200px; white-space: normal;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_Author" class="property_box">
+            <ui:VisualElement name="VE_AuthorNameRoot" style="flex-direction: column;">
+                <ui:VisualElement name="VE_AuthorNameRow" style="flex-direction: row;">
+                    <ui:Label text="  开发者" name="LB_AuthorName" class="text_required" />
+                    <ui:Toggle name="TG_AuthorName" value="false" class="toggle" />
+                </ui:VisualElement>
+                <ui:TextField picking-mode="Ignore" name="TF_AuthorName" class="text_field" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Separator" class="separator" />
+            <ui:VisualElement name="VE_AuthorEmailRoot">
+                <ui:VisualElement name="VE_AuthorEmailRow" style="flex-direction: row;">
+                    <ui:Label text="  邮箱" name="LB_AuthorEmail" class="text_required" />
+                    <ui:Toggle name="TG_AuthorEmail" value="false" class="toggle" />
+                </ui:VisualElement>
+                <ui:TextField picking-mode="Ignore" name="TF_AuthorEmail" class="text_field" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Separator" class="separator" />
+            <ui:VisualElement name="VE_AuthorUrl">
+                <ui:VisualElement name="VE_AuthorUrlRow" style="flex-direction: row;">
+                    <ui:Label text="  个人网站" name="LB_AuthorUrl" class="text_required" />
+                    <ui:Toggle name="TG_AuthorUrl" value="false" class="toggle" />
+                </ui:VisualElement>
+                <ui:Label text="ex: www.firstnamelastname.com" class="text_example"
+                          style="flex-wrap: wrap; white-space: normal;" />
+                <ui:TextField picking-mode="Ignore" name="TF_AuthorUrl" class="text_field" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="VE_Optional" class="property_box">
+            <ui:VisualElement name="VE_UnityRelease" class="package_contents_row" style="flex-direction: column;">
+                <ui:VisualElement name="VE_UnityReleaseRow" style="flex-direction: row;">
+                    <ui:Label text="Unity Release" class="section_title text_required" />
+                    <ui:Toggle name="TG_UnityRelease" value="false" class="toggle" />
+                </ui:VisualElement>
+                <ui:Label text="ex: 0b4" class="text_example" style="flex-wrap: wrap; white-space: normal;" />
+                <ui:TextField picking-mode="Ignore" name="TF_UnityRelease" class="text_field" />
+            </ui:VisualElement>
+            <ui:VisualElement name="VE_Dependencies" class="package_contents_row" style="flex-direction: column;">
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Label text="  添加依赖" class="section_title text_required" />
+                    <ui:Toggle name="TG_Dependencies" value="false" class="toggle" />
+                </ui:VisualElement>
+                <ui:VisualElement name="VE_DependenciesContents" class="property_box">
+                    <ui:VisualElement style="flex-direction: row;">
+                        <ui:Label text="ex:" style="margin-top: 3px; margin-left: 5px;" />
+                        <ui:Instance template="CS_DependenciesEntry" name="CS_DependenciesEntry"
+                                     style="opacity: 0.5; flex-grow: 1;" />
+                    </ui:VisualElement>
+                    <ui:Button text="Add Dependency" name="BT_DependenciesAdd" class="button_add_dependency" />
+                    <ui:ListView focusable="true" name="LV_Dependencies" class="listview_text_field"
+                                 style="flex-grow: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="VE_Keywords" class="package_contents_row" style="flex-direction: column;">
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Label text="  关键字" class="section_title text_required" />
+                    <ui:Toggle name="TG_Keywords" value="false" class="toggle" />
+                </ui:VisualElement>
+                <ui:VisualElement name="VE_KeywordsContents" class="property_box">
+                    <ui:VisualElement style="flex-direction: row;">
+                        <ui:Label text="ex:" style="margin-top: 3px; margin-left: 5px;" />
+                        <ui:Instance template="CS_KeywordsEntry" name="CS_KeywordsEntry"
+                                     style="opacity: 0.5; flex-grow: 1;" />
+                    </ui:VisualElement>
+                    <ui:Button text="Add Keyword" name="BT_KeywordsAdd" class="button_add_dependency" />
+                    <ui:ListView focusable="true" name="LV_Keywords" class="listview_text_field" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

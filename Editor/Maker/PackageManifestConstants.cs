@@ -26,12 +26,11 @@ namespace UnityPackage.Editor
         public const string UnityVersionMajorPropName = "unityVersionMajor";
         public const string UnityVersionMinorPropName = "unityVersionMinor";
         public const string DescriptionPropName = "description";
-        public const string HasAuthorNamePropName = "hasAuthorName";
+      
         public const string AuthorNamePropName = "authorName";
-        public const string HasAuthorEmailPropName = "hasAuthorEmail";
         public const string AuthorEmailPropName = "authorEmail";
-        public const string HasAuthorUrlPropName = "hasAuthorUrl";
         public const string AuthorUrlPropName = "authorUrl";
+        
         public const string HasUnityReleasePropName = "hasUnityRelease";
         public const string UnityReleasePropName = "unityRelease";
         public const string HasDependenciesPropName = "hasDependencies";

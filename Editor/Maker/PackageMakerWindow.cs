@@ -35,7 +35,6 @@ namespace UnityPackage.Editor
         {
             _root = rootVisualElement;
 
-
             #region INITIALIZATION AND QUERY
 
             // Main Package
@@ -65,7 +64,7 @@ namespace UnityPackage.Editor
 
             // Root Folder Name
             var rootFolderNameContentsVisualElement =
-                leftPanel.Q<VisualElement>(RootFolderNameContentsVisualElementName);
+                    leftPanel.Q<VisualElement>(RootFolderNameContentsVisualElementName);
             var rootFolderNameTextField = leftPanel.Q<TextField>(RootFolderNameTextFieldName);
 
             // Readme
@@ -106,40 +105,37 @@ namespace UnityPackage.Editor
 
             // Name
             var packageNameExtensionTextField =
-                packageManifestVisualElement.Q<TextField>(PackageNameExtensionTextFieldName);
+                    packageManifestVisualElement.Q<TextField>(PackageNameExtensionTextFieldName);
             var packageNameCompanyTextField =
-                packageManifestVisualElement.Q<TextField>(PackageNameCompanyTextFieldName);
+                    packageManifestVisualElement.Q<TextField>(PackageNameCompanyTextFieldName);
             var packageNameTextField =
-                packageManifestVisualElement.Q<TextField>(PackageNameTextFieldName);
+                    packageManifestVisualElement.Q<TextField>(PackageNameTextFieldName);
 
             // Version
             var packageVersionMajorIntegerField =
-                packageManifestVisualElement.Q<IntegerField>(PackageVersionMajorIntegerFieldName);
+                    packageManifestVisualElement.Q<IntegerField>(PackageVersionMajorIntegerFieldName);
             var packageVersionMinorIntegerField =
-                packageManifestVisualElement.Q<IntegerField>(PackageVersionMinorIntegerFieldName);
+                    packageManifestVisualElement.Q<IntegerField>(PackageVersionMinorIntegerFieldName);
             var packageVersionPatchIntegerField =
-                packageManifestVisualElement.Q<IntegerField>(PackageVersionPatchIntegerFieldName);
+                    packageManifestVisualElement.Q<IntegerField>(PackageVersionPatchIntegerFieldName);
 
             // Unity 
             var packageUnityVersionMajorIntegerField =
-                packageManifestVisualElement.Q<IntegerField>(PackageUnityVersionMajorIntegerFieldName);
+                    packageManifestVisualElement.Q<IntegerField>(PackageUnityVersionMajorIntegerFieldName);
             var packageUnityVersionMinorIntegerField =
-                packageManifestVisualElement.Q<IntegerField>(PackageUnityVersionMinorIntegerFieldName);
+                    packageManifestVisualElement.Q<IntegerField>(PackageUnityVersionMinorIntegerFieldName);
 
             // Description
             var packageUnityDescriptionTextField =
-                packageManifestVisualElement.Q<TextField>(PackageDescriptionTextFieldName);
+                    packageManifestVisualElement.Q<TextField>(PackageDescriptionTextFieldName);
 
             // Author Name
-            var authorNameToggle = packageManifestVisualElement.Q<Toggle>(AuthorNameToggleName);
             var authorNameTextField = packageManifestVisualElement.Q<TextField>(AuthorNameTextFieldName);
 
             // Author Email
-            var authorEmailToggle = packageManifestVisualElement.Q<Toggle>(AuthorEmailToggleName);
             var authorEmailTextField = packageManifestVisualElement.Q<TextField>(AuthorEmailTextFieldName);
 
             // Author Url
-            var authorUrlToggle = packageManifestVisualElement.Q<Toggle>(AuthorUrlToggleName);
             var authorUrlTextField = packageManifestVisualElement.Q<TextField>(AuthorUrlTextFieldName);
 
             // Unity Release
@@ -149,7 +145,7 @@ namespace UnityPackage.Editor
             // Dependencies
             var dependenciesToggle = packageManifestVisualElement.Q<Toggle>(DependenciesToggleName);
             var dependenciesContent =
-                packageManifestVisualElement.Q<VisualElement>(DependenciesContentsVisualElementName);
+                    packageManifestVisualElement.Q<VisualElement>(DependenciesContentsVisualElementName);
             _dependenciesListView = packageManifestVisualElement.Q<ListView>(DependenciesListViewName);
             _dependencyEntryVisualTreeAsset = Resources.Load<VisualTreeAsset>(DependencyEntryUxmlPath);
             var addDependencyButton = packageManifestVisualElement.Q<Button>(AddDependencyButtonName);
@@ -192,8 +188,7 @@ namespace UnityPackage.Editor
             thirdPartyNoticesVisualElement.style.flexGrow = 1;
             rightScrollView.Add(thirdPartyNoticesVisualElement);
             var thirdPartyNoticesTextField =
-                thirdPartyNoticesVisualElement.Q<TextField>(ThirdPartyNoticesTextFieldName);
-
+                    thirdPartyNoticesVisualElement.Q<TextField>(ThirdPartyNoticesTextFieldName);
 
             var clearAllButton = _root.Q<Button>(ClearAllButtonName);
 
@@ -223,7 +218,7 @@ namespace UnityPackage.Editor
             }
 
             var isUseDisplayNameAsRootFolderNameProperty =
-                pmSerObj.FindProperty(PackageManifestConstants.IsUseDisplayNameAsRootFolderNamePropName);
+                    pmSerObj.FindProperty(PackageManifestConstants.IsUseDisplayNameAsRootFolderNamePropName);
             if (isUseDisplayNameAsRootFolderNameProperty != null)
             {
                 useDisplayNameAsRootFolderNameToggle.BindProperty(isUseDisplayNameAsRootFolderNameProperty);
@@ -259,7 +254,7 @@ namespace UnityPackage.Editor
 
             // Third Party Notices
             var hasThirdPartyNoticesProperty =
-                pmSerObj.FindProperty(PackageManifestConstants.HasThirdPartyNoticesPropName);
+                    pmSerObj.FindProperty(PackageManifestConstants.HasThirdPartyNoticesPropName);
             if (hasThirdPartyNoticesProperty != null)
             {
                 thirdPartyNoticesToggle.BindProperty(hasThirdPartyNoticesProperty);
@@ -288,7 +283,7 @@ namespace UnityPackage.Editor
 
             // Tests Editor Folder
             var hasTestsEditorFolderProperty =
-                pmSerObj.FindProperty(PackageManifestConstants.HasTestsEditorFolderPropName);
+                    pmSerObj.FindProperty(PackageManifestConstants.HasTestsEditorFolderPropName);
             if (hasTestsEditorFolderProperty != null)
             {
                 testsEditorFolderToggle.BindProperty(hasTestsEditorFolderProperty);
@@ -296,7 +291,7 @@ namespace UnityPackage.Editor
 
             // Tests Runtime Folder
             var hasTestsRuntimeFolderProperty =
-                pmSerObj.FindProperty(PackageManifestConstants.HasTestsRuntimeFolderPropName);
+                    pmSerObj.FindProperty(PackageManifestConstants.HasTestsRuntimeFolderPropName);
             if (hasTestsRuntimeFolderProperty != null)
             {
                 testsRuntimeFolderToggle.BindProperty(hasTestsRuntimeFolderProperty);
@@ -304,7 +299,7 @@ namespace UnityPackage.Editor
 
             // Documentation Folder
             var hasDocumentationFolderProperty =
-                pmSerObj.FindProperty(PackageManifestConstants.HasDocumentationFolderPropName);
+                    pmSerObj.FindProperty(PackageManifestConstants.HasDocumentationFolderPropName);
             if (hasDocumentationFolderProperty != null)
             {
                 documentationFolderToggle.BindProperty(hasDocumentationFolderProperty);
@@ -319,7 +314,7 @@ namespace UnityPackage.Editor
 
             // Screenshots Folder
             var hasScreenshotsFolderProperty =
-                pmSerObj.FindProperty(PackageManifestConstants.HasScreenshotsFolderPropName);
+                    pmSerObj.FindProperty(PackageManifestConstants.HasScreenshotsFolderPropName);
             if (hasScreenshotsFolderProperty != null)
             {
                 screenshotsFolderToggle.BindProperty(hasScreenshotsFolderProperty);
@@ -383,30 +378,10 @@ namespace UnityPackage.Editor
                 packageUnityDescriptionTextField.BindProperty(descriptionProperty);
             }
 
-            // Author Name
-            var hasAuthorNameProperty = pmSerObj.FindProperty(PackageManifestConstants.HasAuthorNamePropName);
-            if (hasAuthorNameProperty != null)
-            {
-                authorNameToggle.BindProperty(hasAuthorNameProperty);
-            }
-
             var authorNameProperty = pmSerObj.FindProperty(PackageManifestConstants.AuthorNamePropName);
             if (authorNameProperty != null)
             {
                 authorNameTextField.BindProperty(authorNameProperty);
-            }
-
-            authorNameTextField.SetEnabled(authorNameToggle.value);
-            authorNameToggle.RegisterValueChangedCallback(evt =>
-            {
-                authorNameTextField.SetEnabled(authorNameToggle.value);
-            });
-
-            // Author Email
-            var hasAuthorEmailProperty = pmSerObj.FindProperty(PackageManifestConstants.HasAuthorEmailPropName);
-            if (hasAuthorEmailProperty != null)
-            {
-                authorEmailToggle.BindProperty(hasAuthorEmailProperty);
             }
 
             var authorEmailProperty = pmSerObj.FindProperty(PackageManifestConstants.AuthorEmailPropName);
@@ -415,30 +390,11 @@ namespace UnityPackage.Editor
                 authorEmailTextField.BindProperty(authorEmailProperty);
             }
 
-            authorEmailTextField.SetEnabled(authorEmailToggle.value);
-            authorEmailToggle.RegisterValueChangedCallback(evt =>
-            {
-                authorEmailTextField.SetEnabled(authorEmailToggle.value);
-            });
-
-            // Author Url
-            var hasAuthorUrlProperty = pmSerObj.FindProperty(PackageManifestConstants.HasAuthorUrlPropName);
-            if (hasAuthorUrlProperty != null)
-            {
-                authorUrlToggle.BindProperty(hasAuthorUrlProperty);
-            }
-
             var authorUrlProperty = pmSerObj.FindProperty(PackageManifestConstants.AuthorUrlPropName);
             if (authorUrlProperty != null)
             {
                 authorUrlTextField.BindProperty(authorUrlProperty);
             }
-
-            authorUrlTextField.SetEnabled(authorUrlToggle.value);
-            authorUrlToggle.RegisterValueChangedCallback(evt =>
-            {
-                authorUrlTextField.SetEnabled(authorUrlToggle.value);
-            });
 
             // Unity Release
             var hasUnityReleaseProperty = pmSerObj.FindProperty(PackageManifestConstants.HasUnityReleasePropName);
@@ -501,7 +457,7 @@ namespace UnityPackage.Editor
 
             // Load Button
             loadPackageButton.clickable.clicked += () =>
-                LoadPackage(updatePackageButton, saveToAssetButton);
+                    LoadPackage(updatePackageButton, saveToAssetButton);
 
             // Tests Folder
             testsFolderToggle.RegisterValueChangedCallback(evt =>
@@ -561,17 +517,11 @@ namespace UnityPackage.Editor
 
             // Unity Release
             unityReleaseTextField.SetEnabled(unityReleaseToggle.value);
-            unityReleaseToggle.RegisterValueChangedCallback(evt =>
-            {
-                unityReleaseTextField.SetEnabled(unityReleaseToggle.value);
-            });
+            unityReleaseToggle.RegisterValueChangedCallback(evt => { unityReleaseTextField.SetEnabled(unityReleaseToggle.value); });
 
             // Dependencies
             dependenciesContent.SetEnabled(dependenciesToggle.value);
-            dependenciesToggle.RegisterValueChangedCallback(evt =>
-            {
-                dependenciesContent.SetEnabled(dependenciesToggle.value);
-            });
+            dependenciesToggle.RegisterValueChangedCallback(evt => { dependenciesContent.SetEnabled(dependenciesToggle.value); });
             addDependencyButton.clickable.clicked += () => AddEntryToDependencies();
 
             // Keywords
@@ -606,17 +556,11 @@ namespace UnityPackage.Editor
 
             // Changelog
             changelogVisualElement.SetEnabled(changelogToggle.value);
-            changelogToggle.RegisterValueChangedCallback(evt =>
-            {
-                changelogVisualElement.SetEnabled(changelogToggle.value);
-            });
+            changelogToggle.RegisterValueChangedCallback(evt => { changelogVisualElement.SetEnabled(changelogToggle.value); });
 
             // Licence
             licenseVisualElement.SetEnabled(licenseToggle.value);
-            licenseToggle.RegisterValueChangedCallback(evt =>
-            {
-                licenseVisualElement.SetEnabled(licenseToggle.value);
-            });
+            licenseToggle.RegisterValueChangedCallback(evt => { licenseVisualElement.SetEnabled(licenseToggle.value); });
 
             // Clear All Button
             clearAllButton.clickable.clicked += () =>
@@ -628,11 +572,13 @@ namespace UnityPackage.Editor
 
             // Update Package Button
             updatePackageButton.clickable.clicked += () =>
-                TryCreateNewUnityPackage(_packageManifest, _packageManifest.PackageAbsolutePath);
+                    TryCreateNewUnityPackage(_packageManifest,
+                        _packageManifest.PackageAbsolutePath);
             updatePackageButton.clickable.clicked += SaveToAssets;
+
             // Create Package Button
             createPackageButton.clickable.clicked += () =>
-                TryCreateNewUnityPackage(_packageManifest);
+                    TryCreateNewUnityPackage(_packageManifest);
 
             #endregion
         }
@@ -766,7 +712,6 @@ namespace UnityPackage.Editor
                 description = (string)dictionary[PackageManifestConstants.JsonDescription];
             }
 
-
             _packageManifest.Description = description;
 
             // Author
@@ -778,7 +723,7 @@ namespace UnityPackage.Editor
                 {
                     var serializedAuthorContents = JsonConvert.SerializeObject(authorContents);
                     authorDictionary =
-                        JsonConvert.DeserializeObject<Dictionary<string, string>>(serializedAuthorContents);
+                            JsonConvert.DeserializeObject<Dictionary<string, string>>(serializedAuthorContents);
                 }
                 catch (Exception e)
                 {
@@ -789,26 +734,22 @@ namespace UnityPackage.Editor
                 {
                     if (authorDictionary.TryGetValue(PackageManifestConstants.JsonAuthorName, out var authorName))
                     {
-                        _packageManifest.HasAuthorName = true;
                         _packageManifest.AuthorName = authorName;
                     }
 
                     // Author Email
                     if (authorDictionary.TryGetValue(PackageManifestConstants.JsonAuthorEmail, out var authorEmail))
                     {
-                        _packageManifest.HasAuthorEmail = true;
                         _packageManifest.AuthorEmail = authorEmail;
                     }
 
                     // Author Url
                     if (authorDictionary.TryGetValue(PackageManifestConstants.JsonAuthorUrl, out var authorUrl))
                     {
-                        _packageManifest.HasAuthorUrl = true;
                         _packageManifest.AuthorUrl = authorUrl;
                     }
                 }
             }
-
 
             // Unity Release
             if (dictionary.ContainsKey(PackageManifestConstants.JsonUnityRelease))
@@ -830,7 +771,7 @@ namespace UnityPackage.Editor
                 {
                     var serializedDependenciesContents = JsonConvert.SerializeObject(dependenciesContents);
                     dependenciesDictionary =
-                        JsonConvert.DeserializeObject<Dictionary<string, string>>(serializedDependenciesContents);
+                            JsonConvert.DeserializeObject<Dictionary<string, string>>(serializedDependenciesContents);
                 }
                 catch (Exception e)
                 {
@@ -858,7 +799,7 @@ namespace UnityPackage.Editor
                 {
                     var serializedKeywordsContents = JsonConvert.SerializeObject(keywordsContents);
                     keywordsList =
-                        JsonConvert.DeserializeObject<List<string>>(serializedKeywordsContents);
+                            JsonConvert.DeserializeObject<List<string>>(serializedKeywordsContents);
                 }
                 catch (Exception e)
                 {
@@ -920,7 +861,7 @@ namespace UnityPackage.Editor
 
             // Third Party Notices.md
             var thirdPartyNoticesPath =
-                Path.Combine(parentDirectoryPath, PackageManifestConstants.ThirdPartyNoticesFileName);
+                    Path.Combine(parentDirectoryPath, PackageManifestConstants.ThirdPartyNoticesFileName);
             if (File.Exists(thirdPartyNoticesPath))
             {
                 var streamReader = new StreamReader(thirdPartyNoticesPath);
@@ -950,18 +891,18 @@ namespace UnityPackage.Editor
 
                 // Tests Editor Folder
                 var testsEditorFolderPath =
-                    Path.Combine(testsFolderPath, PackageManifestConstants.TestsEditorFolderName);
+                        Path.Combine(testsFolderPath, PackageManifestConstants.TestsEditorFolderName);
                 _packageManifest.HasTestsEditorFolder = Directory.Exists(testsEditorFolderPath);
 
                 // Tests Runtime Folder
                 var testsRuntimeFolderPath =
-                    Path.Combine(testsFolderPath, PackageManifestConstants.TestsRuntimeFolderName);
+                        Path.Combine(testsFolderPath, PackageManifestConstants.TestsRuntimeFolderName);
                 _packageManifest.HasTestsRuntimeFolder = Directory.Exists(testsRuntimeFolderPath);
             }
 
             // Documentation Folder
             var documentationFolderPath =
-                Path.Combine(parentDirectoryPath, PackageManifestConstants.DocumentationFolderName);
+                    Path.Combine(parentDirectoryPath, PackageManifestConstants.DocumentationFolderName);
             _packageManifest.HasDocumentationFolder = Directory.Exists(documentationFolderPath);
 
             // Samples Folder
@@ -970,7 +911,7 @@ namespace UnityPackage.Editor
 
             // Screenshots Folder
             var screenshotsFolderPath =
-                Path.Combine(parentDirectoryPath, PackageManifestConstants.ScreenshotsFolderName);
+                    Path.Combine(parentDirectoryPath, PackageManifestConstants.ScreenshotsFolderName);
             _packageManifest.HasScreenshotsFolder = Directory.Exists(screenshotsFolderPath);
 
             // Enable Update Button
@@ -989,9 +930,9 @@ namespace UnityPackage.Editor
             var pmSerObjPackageDependency = new UnityEditor.SerializedObject(packageDependency);
             //依赖数据
             var dependencyNameProperty =
-                pmSerObjPackageDependency.FindProperty("dependencyName");
+                    pmSerObjPackageDependency.FindProperty("dependencyName");
             var dependencyVersionProperty =
-                pmSerObjPackageDependency.FindProperty("dependencyVersion");
+                    pmSerObjPackageDependency.FindProperty("dependencyVersion");
             _packageManifest.Dependencies.Add(packageDependency);
 
             var entryNameTextField = customVisualElement.Q<TextField>(DependencyEntryNameTextFieldName);
@@ -1021,7 +962,7 @@ namespace UnityPackage.Editor
             var packageKeyword = ScriptableObject.CreateInstance<PackageKeyword>();
             var pmSerObjPackageKeyword = new UnityEditor.SerializedObject(packageKeyword);
             var keywordValueProperty =
-                pmSerObjPackageKeyword.FindProperty("keywordValue");
+                    pmSerObjPackageKeyword.FindProperty("keywordValue");
             _packageManifest.Keywords.Add(packageKeyword);
 
             var entryNameTextField = customVisualElement.Q<TextField>(KeywordEntryNameTextFieldName);
@@ -1076,15 +1017,15 @@ namespace UnityPackage.Editor
             var packageDictionary = new Dictionary<string, object>();
 
             var packageName =
-                packageManifest.NameExtension + Period +
-                packageManifest.NameCompany + Period +
-                packageManifest.NamePackage;
+                    packageManifest.NameExtension + Period +
+                    packageManifest.NameCompany + Period +
+                    packageManifest.NamePackage;
             packageDictionary[PackageManifestConstants.JsonName] = packageName;
 
             var packageVersion =
-                packageManifest.VersionMajor.ToString() + Period +
-                packageManifest.VersionMinor.ToString() + Period +
-                packageManifest.VersionPatch.ToString();
+                    packageManifest.VersionMajor.ToString() + Period +
+                    packageManifest.VersionMinor.ToString() + Period +
+                    packageManifest.VersionPatch.ToString();
             packageDictionary[PackageManifestConstants.JsonVersion] = packageVersion;
 
             var packageDisplayName = packageManifest.DisplayName;
@@ -1094,8 +1035,8 @@ namespace UnityPackage.Editor
             packageDictionary[PackageManifestConstants.JsonDescription] = packageDescription;
 
             var packageUnity =
-                packageManifest.UnityVersionMajor.ToString() + Period +
-                packageManifest.UnityVersionMinor.ToString();
+                    packageManifest.UnityVersionMajor.ToString() + Period +
+                    packageManifest.UnityVersionMinor.ToString();
             packageDictionary[PackageManifestConstants.JsonUnity] = packageUnity;
 
             if (packageManifest.HasUnityRelease)
@@ -1112,7 +1053,7 @@ namespace UnityPackage.Editor
                 foreach (var dependency in dependencies)
                 {
                     dependenciesDictionary[dependency.DependencyName]
-                        = dependency.DependencyVersion;
+                            = dependency.DependencyVersion;
                 }
 
                 packageDictionary[PackageManifestConstants.JsonDependencies] = dependenciesDictionary;
@@ -1131,7 +1072,7 @@ namespace UnityPackage.Editor
                 packageDictionary[PackageManifestConstants.JsonKeywords] = keywordsList;
             }
 
-            if (packageManifest.HasAuthorName || packageManifest.HasAuthorEmail || packageManifest.HasAuthorUrl)
+            if (packageManifest.AuthorName != "" || packageManifest.AuthorEmail != "" || packageManifest.AuthorUrl != "")
             {
                 var author = new Dictionary<string, string>
                 {
@@ -1175,7 +1116,7 @@ namespace UnityPackage.Editor
             if (packageManifest.HasThirdPartyNotices)
             {
                 var thirdPartyNoticesFilePath =
-                    Path.Combine(rootFolderPath, PackageManifestConstants.ThirdPartyNoticesFileName);
+                        Path.Combine(rootFolderPath, PackageManifestConstants.ThirdPartyNoticesFileName);
                 var thirdPartyNoticesWriter = File.CreateText(thirdPartyNoticesFilePath);
                 thirdPartyNoticesWriter.Write(packageManifest.ThirdPartyNotices);
                 thirdPartyNoticesWriter.Close();
@@ -1208,17 +1149,17 @@ namespace UnityPackage.Editor
                 var testsFolderPath = Path.Combine(rootFolderPath, PackageManifestConstants.TestsFolderName);
                 Directory.CreateDirectory(testsFolderPath);
                 var testsFolderNullFile =
-                    File.Create(Path.Combine(testsFolderPath, PackageManifestConstants.EmptyFileName));
+                        File.Create(Path.Combine(testsFolderPath, PackageManifestConstants.EmptyFileName));
                 testsFolderNullFile.Close();
 
                 // Tests Editor Folder
                 if (packageManifest.HasTestsEditorFolder)
                 {
                     var testsEditorFolderPath =
-                        Path.Combine(testsFolderPath, PackageManifestConstants.TestsEditorFolderName);
+                            Path.Combine(testsFolderPath, PackageManifestConstants.TestsEditorFolderName);
                     Directory.CreateDirectory(testsEditorFolderPath);
                     var testsEditorFolderNullFile =
-                        File.Create(Path.Combine(testsEditorFolderPath, PackageManifestConstants.EmptyFileName));
+                            File.Create(Path.Combine(testsEditorFolderPath, PackageManifestConstants.EmptyFileName));
                     testsEditorFolderNullFile.Close();
                 }
 
@@ -1226,10 +1167,10 @@ namespace UnityPackage.Editor
                 if (packageManifest.HasTestsRuntimeFolder)
                 {
                     var testsRuntimeFolderPath =
-                        Path.Combine(rootFolderPath, PackageManifestConstants.TestsRuntimeFolderName);
+                            Path.Combine(rootFolderPath, PackageManifestConstants.TestsRuntimeFolderName);
                     Directory.CreateDirectory(testsRuntimeFolderPath);
                     var testsRuntimeFolderNullFile =
-                        File.Create(Path.Combine(testsRuntimeFolderPath, PackageManifestConstants.EmptyFileName));
+                            File.Create(Path.Combine(testsRuntimeFolderPath, PackageManifestConstants.EmptyFileName));
                     testsRuntimeFolderNullFile.Close();
                 }
             }
@@ -1238,10 +1179,10 @@ namespace UnityPackage.Editor
             if (packageManifest.HasDocumentationFolder)
             {
                 var documentationFolderPath =
-                    Path.Combine(rootFolderPath, PackageManifestConstants.DocumentationFolderName);
+                        Path.Combine(rootFolderPath, PackageManifestConstants.DocumentationFolderName);
                 Directory.CreateDirectory(documentationFolderPath);
                 var documentationFolderNullFile =
-                    File.Create(Path.Combine(documentationFolderPath, PackageManifestConstants.EmptyFileName));
+                        File.Create(Path.Combine(documentationFolderPath, PackageManifestConstants.EmptyFileName));
                 documentationFolderNullFile.Close();
             }
 
@@ -1251,7 +1192,7 @@ namespace UnityPackage.Editor
                 var samplesFolderPath = Path.Combine(rootFolderPath, PackageManifestConstants.SamplesFolderName);
                 Directory.CreateDirectory(samplesFolderPath);
                 var samplesFolderNullFile =
-                    File.Create(Path.Combine(samplesFolderPath, PackageManifestConstants.EmptyFileName));
+                        File.Create(Path.Combine(samplesFolderPath, PackageManifestConstants.EmptyFileName));
                 samplesFolderNullFile.Close();
             }
 
@@ -1273,18 +1214,23 @@ namespace UnityPackage.Editor
                 return;
             }
 
-            var _packages = AssetDatabase.LoadAssetAtPath<ExpansionPackages>
-            ("Packages/com.xfkj.xfgameframework/" +
-             "Editor/Configs/ExpansionPackages.asset");
+            var _packages = AssetDatabase.LoadAssetAtPath<ExpansionPackages>("Packages/com.xfkj.xfgameframework/" +
+                "Editor/Configs/ExpansionPackages.asset");
 
+            if (_packages == null)
+            {
+                Debug.LogError("找不到数据集");
+                return;
+            }
+            
             ExpansionPackageInfo packageInfo = new ExpansionPackageInfo();
             packageInfo.name = _packageManifest.NamePackage;
             packageInfo.displayName = _packageManifest.DisplayName;
             packageInfo.description = _packageManifest.Description;
             packageInfo.gitUrl = _packageManifest.AuthorUrl;
             packageInfo.version = _packageManifest.VersionMajor
-                                  + "." + _packageManifest.VersionMinor
-                                  + "." + _packageManifest.VersionPatch;
+                    + "." + _packageManifest.VersionMinor
+                    + "." + _packageManifest.VersionPatch;
             packageInfo.quick_start = _packageManifest.Readme;
             packageInfo.change_log = _packageManifest.Changelog;
             packageInfo.author = _packageManifest.AuthorName;
@@ -1296,6 +1242,7 @@ namespace UnityPackage.Editor
                     packageInfo.dependencies.Add(VARIABLE.DependencyName);
                 }
             }
+
             _packages.packages.Add(packageInfo);
             _packages.Save();
         }

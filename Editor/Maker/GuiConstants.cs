@@ -57,14 +57,10 @@ namespace UnityPackage.Editor
         public const string PackageUnityVersionMinorIntegerFieldName = "IF_PackageUnityVersionMinor";
 
         public const string PackageDescriptionTextFieldName = "TF_PackageDescription";
-
-        public const string AuthorNameToggleName = "TG_AuthorName";
+        
+        
         public const string AuthorNameTextFieldName = "TF_AuthorName";
-
-        public const string AuthorEmailToggleName = "TG_AuthorEmail";
         public const string AuthorEmailTextFieldName = "TF_AuthorEmail";
-
-        public const string AuthorUrlToggleName = "TG_AuthorUrl";
         public const string AuthorUrlTextFieldName = "TF_AuthorUrl";
 
         public const string UnityReleaseToggleName = "TG_UnityRelease";

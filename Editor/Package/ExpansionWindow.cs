@@ -96,14 +96,14 @@ namespace UnityPackage.Editor
         {
             get
             { 
-                if (_packages == null)
-                    _packages = AssetDatabase.LoadAssetAtPath<ExpansionPackages>
-                        ("Packages/com.xfkj.xfgameframework/" +
-                         "Editor/Configs/ExpansionPackages.asset");
+                // if (_packages == null)
+                //     _packages = AssetDatabase.LoadAssetAtPath<ExpansionPackages>
+                //         ("Packages/com.xfkj.xfgameframework/" +
+                //          "Editor/Configs/ExpansionPackages.asset");
 
                 if (_packages == null)
                     _packages = AssetDatabase.LoadAssetAtPath<ExpansionPackages>
-                        ("Assets/Resources/ExpansionPackages.asset");
+                        ("Assets/Config/ExpansionPackages.asset");
 
                 return _packages;
             }

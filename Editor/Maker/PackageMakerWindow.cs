@@ -579,6 +579,7 @@ namespace UnityPackage.Editor
             // Create Package Button
             createPackageButton.clickable.clicked += () =>
                     TryCreateNewUnityPackage(_packageManifest);
+            saveToAssetButton.clickable.clicked += SaveToAssets;
 
             #endregion
         }
@@ -1214,12 +1215,18 @@ namespace UnityPackage.Editor
                 return;
             }
 
-            var _packages = AssetDatabase.LoadAssetAtPath<ExpansionPackages>("Packages/com.xfkj.xfgameframework/" +
-                "Editor/Configs/ExpansionPackages.asset");
+            var _packages = AssetDatabase.LoadAssetAtPath<ExpansionPackages>
+            ("Assets/Config/ExpansionPackages.asset");
 
             if (_packages == null)
             {
                 Debug.LogError("找不到数据集");
+                return;
+            }
+
+            if ( _packages.Get(_packageManifest.NamePackage)!=null)
+            {
+                Debug.LogError("已有相同的名称数据存在");
                 return;
             }
             
@@ -1245,6 +1252,7 @@ namespace UnityPackage.Editor
 
             _packages.packages.Add(packageInfo);
             _packages.Save();
+            Debug.Log("成功保存到私人库中");
         }
     }
 }

@@ -66,6 +66,7 @@ namespace UnityPackage.Editor
     //     
     // }
 
+    [CreateAssetMenu(fileName = "ExpansionPackages", menuName = "ET/ExpansionPackages", order = 1)]
     public class ExpansionPackages : ScriptableObject
     {
         // Fix编码  
